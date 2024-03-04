@@ -59,7 +59,7 @@ def display_day_analysis(df):
     st.pyplot(plt)
 
     st.write('''
-             Berdasarkan hasil penelitian, orang-orang cenderung bersepeda di hari kerja yang bukan merupakan tanggal merah/libur, dan apabila dibandingkan dengan hari kerja, orang-orang tidak terlalu sering bersepeda di hari libur atau diluar jam kerja.
+             Berdasarkan hasil penelitian, orang-orang cenderung bersepeda di hari kerja yang bukan merupakan tanggal merah/libur, dan apabila dibandingkan dengan hari kerja, orang-orang agak berkurang bersepeda di hari libur atau diluar jam kerja.
              ''')
 
 def display_trend(df):
