@@ -6,14 +6,14 @@ df = pd.read_csv('https://raw.githubusercontent.com/ddapun/bike-sharing-dataset/
 
 def main():
     st.sidebar.image("https://github.com/dicodingacademy/assets/raw/main/logo.png")
-    analysis_choice = st.sidebar.selectbox(
+    pilihan = st.sidebar.selectbox(
         'Hasil Analisis yang Tersedia:', 
                                            ['Relasi Penjualan dengan Hari Kerja dan Hari Libur', 
                                             'Relasi antara Cuaca, Musim, Bulan terhadap Penjualan', 
                                             'Tren Penjualan Bike Sharing'
                                             ]
                                             )
-    tampilkan_analisa(analysis_choice)
+    tampilkan_analisa(pilihan)
 
 
 if __name__ == '__main__':
