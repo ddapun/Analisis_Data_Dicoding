@@ -37,23 +37,23 @@ def display_season_relation(df):
 
 
 def display_day_analysis(df):
-    st.header('Distribusi Penjualan Hari Libur vs Hari Kerja')
+    st.header('Penjualan pada Hari Libur dan Hari Kerja')
 
     sales_by_day_type = df.groupby(['holiday', 'workingday'])['cnt'].sum().reset_index()
 
     # Mengganti nilai 0 dan 1 pada kolom holiday dan workingday dengan label yang lebih deskriptif
     sales_by_day_type['holiday'] = sales_by_day_type['holiday'].map({0: 'Non-Holiday', 1: 'Holiday'})
-    sales_by_day_type['workingday'] = sales_by_day_type['workingday'].map({0: 'Non-Working Day', 1: 'Working Day'})
+    sales_by_day_type['workingday'] = sales_by_day_type['workingday'].map({0: 'Weekend or Holiday', 1: 'Weekday'})
 
     # Set up Streamlit app
 
     # Create plot
     plt.figure(figsize=(10, 6))
-    sns.barplot(data=sales_by_day_type, x='holiday', y='cnt', hue='workingday', errorbar=None)
-    plt.title('Distribusi Penjualan pada Hari Libur dan Hari Kerja')
-    plt.xlabel('Jenis Hari')
-    plt.ylabel('Jumlah Penjualan')
-    plt.legend(title='Status Hari')
+    sns.barplot(data=sales_by_day_type, x='holiday', y='cnt', hue='workingday', color='steelblue', errorbar=None)
+    plt.title('Penjualan pada Hari Libur dan Hari Kerja')
+    plt.xlabel('Hari')
+    plt.ylabel('Penjualan')
+    plt.legend(title='Status Minggu')
 
     # Display plot using Streamlit
     st.pyplot(plt)
